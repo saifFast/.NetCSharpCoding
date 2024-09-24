@@ -6,8 +6,11 @@ namespace BasicOfC_
     {
         static void Main(string[] args)
         {
-            var genercis = new Generics();
-            genercis.Start();
+            //var genercis = new Generics();
+            //genercis.Start();
+
+            var DI = new DependecyInjection();
+            DI.Start();
 
 
             Console.ReadLine();            
