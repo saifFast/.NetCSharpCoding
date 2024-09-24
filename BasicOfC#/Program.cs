@@ -9,9 +9,11 @@ namespace BasicOfC_
             //var genercis = new Generics();
             //genercis.Start();
 
-            var DI = new DependecyInjection();
-            DI.Start();
+            //var DI = new DependecyInjection();
+            //DI.Start();
 
+            var _Datastructure = new Datastructure();
+            _Datastructure.Start();
 
             Console.ReadLine();            
         }       
