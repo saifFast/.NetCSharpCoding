@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -56,13 +57,28 @@ namespace BasicOfC_
             var ints = new Stack<int>();
             ints.Push(1);
             ints.Push(2);
-            PrintStack(ints);
+            PrintStack1(ints);
             ints.Pop();
-            PrintStack(ints);
+            PrintStack1(ints);
 
-            void PrintStack(Stack<int> stack)
+            var concurrentStack = new ConcurrentStack<int>();
+            concurrentStack.Push(1);
+            concurrentStack.Push(2);
+
+            PrintStack2(concurrentStack);
+
+
+            void PrintStack1(Stack<int> stack)
             {
                 foreach(var item in stack)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+            void PrintStack2(ConcurrentStack<int> stack)
+            {
+                foreach (var item in stack)
                 {
                     Console.WriteLine(item);
                 }
@@ -92,6 +108,13 @@ namespace BasicOfC_
                 Console.WriteLine(item);
             }
 
+            var concurrentQueue = new ConcurrentQueue<int>();
+
+            concurrentQueue.Enqueue(1);
+            concurrentQueue.Enqueue(2);
+            concurrentQueue.Enqueue(3);
+
+            concurrentQueue.TryDequeue(out int result);
 
         }
 
