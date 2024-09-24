@@ -6,11 +6,11 @@ namespace BasicOfC_
     {
         static void Main(string[] args)
         {
-            
+            var genercis = new Generics();
+            genercis.Start();
 
-            Console.ReadLine();
-        }
 
-       
+            Console.ReadLine();            
+        }       
     }
 }
