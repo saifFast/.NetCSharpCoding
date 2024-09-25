@@ -141,6 +141,16 @@ namespace BasicOfC_
                 Console.WriteLine(item.Key.ToString(), item.Value.ToString());
             }
 
+            var concurrentDictionary = new ConcurrentDictionary<int, int>();
+            concurrentDictionary.TryAdd(1,1);
+            concurrentDictionary.TryAdd(2, 2);
+
+            foreach (var item in concurrentDictionary)
+            {
+                Console.WriteLine(item.Key.ToString(), item.Value.ToString());
+            }
+
+
         }
 
 
