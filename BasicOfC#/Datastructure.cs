@@ -14,6 +14,7 @@ namespace BasicOfC_
             //ListAndLinkedList();
             //Stack();
             //Queue();
+            DictionariesAndSets();
         }
 
         public void Array()
@@ -117,6 +118,21 @@ namespace BasicOfC_
             concurrentQueue.TryDequeue(out int result);
 
         }
+
+        public void DictionariesAndSets()
+        {
+            var dictionary = new Dictionary<int, int>();
+            dictionary.Add(1,1);
+            dictionary.Add(2,2);
+
+            foreach(var item in dictionary)
+            {
+                Console.WriteLine(item.Key.ToString(), item.Value.ToString());
+            }
+
+
+        }
+
 
         public void HashTableExample()
         {
