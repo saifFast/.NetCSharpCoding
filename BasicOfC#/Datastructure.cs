@@ -169,19 +169,21 @@ namespace BasicOfC_
                 Console.WriteLine(item);
             }
 
+            Console.WriteLine("Sorted Set");
+
+            var sortedSet = new SortedSet<int>();
+            sortedSet.Add(100);
+            sortedSet.Add(2);
+
+            foreach(var item in sortedSet)
+            {
+                Console.WriteLine(item);
+            }
 
         }
 
 
-        public void HashTableExample()
-        {
-            var ht = new Hashtable();
-
-            ht.Add("a", "a");
-            ht.Add("b", "b");
-            ht.Add("c", "c");
-
-        }
+        
 
     }
 }
