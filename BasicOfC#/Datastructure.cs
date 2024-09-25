@@ -130,6 +130,16 @@ namespace BasicOfC_
                 Console.WriteLine(item.Key.ToString(), item.Value.ToString());
             }
 
+            var sortedDictionary = new SortedDictionary<int, int>();
+            sortedDictionary.Add(1,1);
+            sortedDictionary.Add(2,2);
+            sortedDictionary.Add(4, 4);
+            sortedDictionary.Add(3, 3);
+
+            foreach (var item in sortedDictionary)
+            {
+                Console.WriteLine(item.Key.ToString(), item.Value.ToString());
+            }
 
         }
 
