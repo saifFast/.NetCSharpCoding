@@ -125,7 +125,9 @@ namespace BasicOfC_
             dictionary.Add(1,1);
             dictionary.Add(2,2);
 
-            foreach(var item in dictionary)
+            Console.WriteLine("Dictionary");
+
+            foreach (var item in dictionary)
             {
                 Console.WriteLine(item.Key.ToString(), item.Value.ToString());
             }
@@ -136,10 +138,14 @@ namespace BasicOfC_
             sortedDictionary.Add(4, 4);
             sortedDictionary.Add(3, 3);
 
+            Console.WriteLine("SortedDictionary");
+
             foreach (var item in sortedDictionary)
             {
                 Console.WriteLine(item.Key.ToString(), item.Value.ToString());
             }
+
+            Console.WriteLine("ConcurrentDictionary");
 
             var concurrentDictionary = new ConcurrentDictionary<int, int>();
             concurrentDictionary.TryAdd(1,1);
@@ -148,6 +154,19 @@ namespace BasicOfC_
             foreach (var item in concurrentDictionary)
             {
                 Console.WriteLine(item.Key.ToString(), item.Value.ToString());
+            }
+
+            Console.WriteLine("Hashset");
+
+            var hashSet = new HashSet<int> { 1,2,3};
+            hashSet.Add(1);
+            hashSet.Add(1);
+            hashSet.Add(1);
+            hashSet.Add(1);
+
+            foreach(var item in hashSet)
+            {
+                Console.WriteLine(item);
             }
 
 
