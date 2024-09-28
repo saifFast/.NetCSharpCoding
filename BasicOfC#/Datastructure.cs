@@ -14,7 +14,8 @@ namespace BasicOfC_
             //ListAndLinkedList();
             //Stack();
             //Queue();
-            DictionariesAndSets();
+            //DictionariesAndSets();
+            SpecializedArray();
         }
 
         public void Array()
@@ -182,8 +183,23 @@ namespace BasicOfC_
 
         }
 
+        public void SpecializedArray()
+        {
+            var array = new BitArray(5);
 
-        
+            array[0] = false;
+            array[1] = false;
+            array[2] = false;
+            array[3] = true;
+            array[4] = true;
+
+            foreach(var item in array)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+
 
     }
 }
