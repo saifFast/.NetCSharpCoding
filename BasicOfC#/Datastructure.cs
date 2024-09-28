@@ -197,6 +197,18 @@ namespace BasicOfC_
             {
                 Console.WriteLine(item);
             }
+
+            var blockingCollection = new BlockingCollection<int>();
+            
+            blockingCollection.Add(1);
+            blockingCollection.Add(2);
+            blockingCollection.Add(3);
+
+            foreach(var item in blockingCollection)
+            {
+                Console.WriteLine(item);
+            }
+
         }
 
 
