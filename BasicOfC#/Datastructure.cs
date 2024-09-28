@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace BasicOfC_
@@ -48,7 +49,7 @@ namespace BasicOfC_
             linkedList.AddLast(2);
             linkedList.AddBefore(linkedList.First, 3);
 
-            foreach(var listItem in linkedList)
+            foreach (var listItem in linkedList)
             {
                 Console.WriteLine(listItem);
             }
@@ -72,7 +73,7 @@ namespace BasicOfC_
 
             void PrintStack1(Stack<int> stack)
             {
-                foreach(var item in stack)
+                foreach (var item in stack)
                 {
                     Console.WriteLine(item);
                 }
@@ -100,7 +101,7 @@ namespace BasicOfC_
             queue2.Enqueue("Saif");
             queue2.Enqueue(3.5);
 
-            foreach(var item in queue)
+            foreach (var item in queue)
             {
                 Console.WriteLine(item);
             }
@@ -123,8 +124,8 @@ namespace BasicOfC_
         public void DictionariesAndSets()
         {
             var dictionary = new Dictionary<int, int>();
-            dictionary.Add(1,1);
-            dictionary.Add(2,2);
+            dictionary.Add(1, 1);
+            dictionary.Add(2, 2);
 
             Console.WriteLine("Dictionary");
 
@@ -134,8 +135,8 @@ namespace BasicOfC_
             }
 
             var sortedDictionary = new SortedDictionary<int, int>();
-            sortedDictionary.Add(1,1);
-            sortedDictionary.Add(2,2);
+            sortedDictionary.Add(1, 1);
+            sortedDictionary.Add(2, 2);
             sortedDictionary.Add(4, 4);
             sortedDictionary.Add(3, 3);
 
@@ -149,7 +150,7 @@ namespace BasicOfC_
             Console.WriteLine("ConcurrentDictionary");
 
             var concurrentDictionary = new ConcurrentDictionary<int, int>();
-            concurrentDictionary.TryAdd(1,1);
+            concurrentDictionary.TryAdd(1, 1);
             concurrentDictionary.TryAdd(2, 2);
 
             foreach (var item in concurrentDictionary)
@@ -159,13 +160,13 @@ namespace BasicOfC_
 
             Console.WriteLine("Hashset");
 
-            var hashSet = new HashSet<int> { 1,2,3};
+            var hashSet = new HashSet<int> { 1, 2, 3 };
             hashSet.Add(1);
             hashSet.Add(1);
             hashSet.Add(1);
             hashSet.Add(1);
 
-            foreach(var item in hashSet)
+            foreach (var item in hashSet)
             {
                 Console.WriteLine(item);
             }
@@ -176,7 +177,7 @@ namespace BasicOfC_
             sortedSet.Add(100);
             sortedSet.Add(2);
 
-            foreach(var item in sortedSet)
+            foreach (var item in sortedSet)
             {
                 Console.WriteLine(item);
             }
@@ -193,25 +194,41 @@ namespace BasicOfC_
             array[3] = true;
             array[4] = true;
 
-            foreach(var item in array)
+            foreach (var item in array)
             {
                 Console.WriteLine(item);
             }
 
             var blockingCollection = new BlockingCollection<int>();
-            
+
             blockingCollection.Add(1);
             blockingCollection.Add(2);
             blockingCollection.Add(3);
 
-            foreach(var item in blockingCollection)
+            foreach (var item in blockingCollection)
             {
                 Console.WriteLine(item);
             }
 
+            /*             
+            ObservableCollection<T>: 
+            Collection that raises events when items are added or removed, 
+            often used in data binding.            
+             */
+
+            var observableCollection = new ObservableCollection<SampleObservableCollectionModel>();
+            observableCollection.CollectionChanged += ObservableCollection_CollectionChanged;
+            observableCollection.Add(new SampleObservableCollectionModel() { Id = 1 });
         }
 
+        private void ObservableCollection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            Console.WriteLine("Hey Man");
+        }
+    }
 
-
+    public class SampleObservableCollectionModel
+    {
+        public int Id { get; set; }
     }
 }
