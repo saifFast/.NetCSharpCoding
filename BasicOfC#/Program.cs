@@ -12,8 +12,11 @@ namespace BasicOfC_
             //var DI = new DependecyInjection();
             //DI.Start();
 
-            var _Datastructure = new Datastructure();
-            _Datastructure.Start();
+            //var _Datastructure = new Datastructure();
+            //_Datastructure.Start();
+
+            var Threading = new Threading();
+            Threading.Start();
 
             Console.ReadLine();            
         }       
