@@ -5,7 +5,8 @@ namespace Test //collection of classes
     {
         static void Main(string[] args) // code to executed
         {
-
+            var car1 = new Car("Audi");
+            var car2 = new Car("Honda");
         }
     }
 }
