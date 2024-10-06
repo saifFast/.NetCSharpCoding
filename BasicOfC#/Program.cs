@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BasicOfC_.Design_Patterns;
+using System;
 
 namespace BasicOfC_
 {
@@ -15,8 +16,11 @@ namespace BasicOfC_
             //var _Datastructure = new Datastructure();
             //_Datastructure.Start();
 
-            var Threading = new Threading();
-            Threading.Start();
+            //var Threading = new Threading();
+            //Threading.Start();
+
+            Singleton singleton = Singleton.Instance;
+            singleton.ShowMessage();
 
             Console.ReadLine();            
         }       
