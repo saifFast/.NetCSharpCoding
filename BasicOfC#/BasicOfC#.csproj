@@ -47,6 +47,7 @@
     <Compile Include="DelegateExample.cs" />
     <Compile Include="DependecyInjection.cs" />
     <Compile Include="Design Patterns\FactoryPattern.cs" />
+    <Compile Include="Design Patterns\Observer.cs" />
     <Compile Include="Design Patterns\SingletonWithLock.cs" />
     <Compile Include="Design Patterns\Singleton.cs" />
     <Compile Include="Generics.cs" />
