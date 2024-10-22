@@ -17,9 +17,17 @@ namespace Test //collection of classes
             PrintMessage p = new PrintMessage(obj.PrintValue);
             p("Saif");
 
+
             Func<int, int, int> add = (x, y) => x + y;
 
+            Func<string, string, string> concat = (a, b) =>
+            {
+                return a + b;
+            };
+
             Console.WriteLine(add(3,4));
+
+            Console.WriteLine(concat("a","b"));
 
             Console.ReadLine();
 
